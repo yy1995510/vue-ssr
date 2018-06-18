@@ -2,7 +2,6 @@
     <div>
         <span>{{txt}}</span>
         <img src="./assets/images/640.gif" alt="404">
-        <v-btn color="primary">Toggle</v-btn>
         <test></test>
     </div>
     
