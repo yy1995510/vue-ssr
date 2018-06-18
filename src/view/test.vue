@@ -1,6 +1,6 @@
 <template>
     <div class="test">
-        <span class="test">test</span>
+        <span class="test">test  </span>
         <v-app>
         <v-content>
             <v-container>Hello world</v-container>

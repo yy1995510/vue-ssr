@@ -2,7 +2,6 @@ import Vue from 'vue'
 import index from './index.vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-import 'babel-polyfill'
 import './test.styl'
 import './index.css'
 

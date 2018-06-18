@@ -65,7 +65,7 @@ const config = {
             }
         ]
     },
-    mode: 'production',
+    mode: isDev ? 'development' : 'production',
     plugins: [
         new VueLoaderPlugin(),
         // new webpack.DefinePlugin({
@@ -81,13 +81,19 @@ const config = {
 }
 
 if (isDev) {
+    config.devtool = '#cheap-module-eval-source-map'
     config.devServer = {
         port: 8080,
         host: 'localhost',
         overlay: {
             errors: true
         },
+        hot: true,
         open: true
-    }
+    },
+    config.plugins.push(
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin()
+    )
 }
 module.exports = config 
