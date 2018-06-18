@@ -1,5 +1,6 @@
 var path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const config = {
     entry: path.join(__dirname, 'src/index.js'),
     output: {
@@ -23,12 +24,30 @@ const config = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(styl|stylus)$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'stylus-loader'
+                ]
             }
         ]
     },
     mode: 'development',
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "index.css"
+        })
     ]
 }
 module.exports = config 
