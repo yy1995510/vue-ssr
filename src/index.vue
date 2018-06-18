@@ -1,7 +1,8 @@
 <template>
     <div>
         <span>{{txt}}</span>
-        <img src="./assets/images/640.gif" alt="404">
+        <img class="test" src="./assets/images/640.gif" alt="404">
+        <span></span>
         <test></test>
     </div>
     
@@ -22,4 +23,7 @@ export default {
 <style lang="stylus">
 body
   font 12px Helvetica, Arial, sans-serif
+.test
+  color red
+  transform scale(.5)
 </style>

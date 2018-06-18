@@ -18,9 +18,3 @@ export default {
     
 }
 </script>
-
-<style lang="stylus" scoped>
-test
-  color red
-  transform scale(.5)
-</style>
